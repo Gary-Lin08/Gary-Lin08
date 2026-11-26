@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="https://cerebel.tech"><img src="https://img.shields.io/badge/Cerebel_AI-cerebel.tech-22D3EE?style=for-the-badge&labelColor=0A1022" alt="Cerebel AI" /></a>
-  <img src="https://img.shields.io/badge/Based_in-Japan-F472B6?style=for-the-badge&labelColor=0A1022" alt="Based in Japan" />
-  <img src="https://img.shields.io/badge/Focus-Perception_%C2%B7_Motion_%C2%B7_Agents-A78BFA?style=for-the-badge&labelColor=0A1022" alt="Focus" />
+  <a href="https://cerebel.tech"><img src="assets/badges/cerebel-ai-cerebel-tech-22d3ee.svg" alt="Cerebel AI" /></a>
+  <img src="assets/badges/based-in-japan-f472b6.svg" alt="Based in Japan" />
+  <img src="assets/badges/focus-perception-c2-b7-motion-c2-b7-agen.svg" alt="Focus" />
 </p>
 
 <br/>
@@ -84,19 +84,19 @@ The C inference code is checked against PyTorch on every release, with a max abs
 ## ◆ Toolbox
 
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white" />
-  <img src="https://img.shields.io/badge/Core_ML-0A84FF?style=flat-square&logo=apple&logoColor=white" />
-  <img src="https://img.shields.io/badge/OpenSim-34D399?style=flat-square" />
-  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
-  <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=flat-square&logo=kaggle&logoColor=white" />
+  <img src="assets/badges/python-3776ab.svg" />
+  <img src="assets/badges/pytorch-ee4c2c.svg" />
+  <img src="assets/badges/c-a8b9cc.svg" />
+  <img src="assets/badges/typescript-3178c6.svg" />
+  <img src="assets/badges/swift-f05138.svg" />
+  <img src="assets/badges/core-ml-0a84ff.svg" />
+  <img src="assets/badges/opensim-34d399.svg" />
+  <img src="assets/badges/react-20232a.svg" />
+  <img src="assets/badges/node-js-339933.svg" />
+  <img src="assets/badges/fastapi-009688.svg" />
+  <img src="assets/badges/supabase-3fcf8e.svg" />
+  <img src="assets/badges/vercel-000000.svg" />
+  <img src="assets/badges/kaggle-20beff.svg" />
 </p>
 
 <br/>
