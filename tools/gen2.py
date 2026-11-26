@@ -28,10 +28,10 @@ def f(x):
 
 def svg(w, h, body, defs=''):
     css = f"""
-text{{font-family:{SANS};fill:{T['ink']};}}
+text{{font-family:{SANS};}} text:not([fill]){{fill:{T['ink']};}}
 .serif{{font-family:{SERIF};}} .mono{{font-family:{MONO};}}
-.caps{{letter-spacing:.14em;font-size:13px;fill:{T['mute']};}}
-.ink2{{fill:{T['ink2']};}} .mute{{fill:{T['mute']};}} .acc{{fill:{T['acc']};}}
+text.caps{{letter-spacing:.14em;font-size:13px;fill:{T['mute']};}}
+text.ink2{{fill:{T['ink2']};}} text.mute{{fill:{T['mute']};}} text.acc{{fill:{T['acc']};}}
 """
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img">
 <defs><style>{css}</style>
@@ -122,11 +122,13 @@ def header():
     W, H = 1200, 310
     b = ''
     # typography block
-    b += f'<text x="0" y="104" class="serif" font-size="74" letter-spacing="-.5">Gary Lin</text>'
+    b += f'<text x="0" y="104" class="serif" font-size="74" letter-spacing="-.5">Kaijun Lin</text>'
     b += f'<text x="3" y="142" class="caps">ON-DEVICE PERCEPTION  ·  HUMAN MOTION  ·  AGENT SYSTEMS</text>'
     b += f'<line x1="2" y1="164" x2="520" y2="164" stroke="{T["hair"]}"/>'
     b += f'<text x="2" y="198" class="serif ink2" font-size="21">Building <tspan font-style="italic" fill="{T["ink"]}">Cerebel AI</tspan>, wearable perception</text>'
     b += f'<text x="2" y="226" class="serif ink2" font-size="21">that understands how people move.</text>'
+    b += f'<text x="2" y="266" class="mono" font-size="14" fill="{T["acc"]}">cerebel.tech</text>'
+    b += f'<text x="112" y="266" class="mono mute" font-size="14">·  Wearable Motion Intelligence</text>'
     # chronophotograph
     gy = 236
     X0, X1 = 600, 1170
@@ -482,7 +484,9 @@ def agents():
     save(f'agents-{TN}.svg', svg(W, H, b))
 
 
+exec(open(__file__.replace('gen2.py', 'figs3d.py'), encoding='utf-8').read())
+exec(open(__file__.replace('gen2.py', 'figs_body.py'), encoding='utf-8').read())
 for TN in ('light', 'dark'):
     T = THEMES[TN]
-    header(); system(); biomech(); wake(); results(); agents()
+    header(); system(); biomech(); wake(); results(); agents(); golf3d(); tennis(); reconstruct(); glasses()
 print('ok', sorted(os.listdir(OUT)))
