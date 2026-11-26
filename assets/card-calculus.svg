@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="580" height="200" viewBox="0 0 580 200" role="img">
+<defs>
+<style>
+text{font-family:'Segoe UI',Inter,-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;}
+.mono{font-family:'JetBrains Mono','SF Mono','Cascadia Code',Consolas,Menlo,monospace;}
+.t{fill:#E8EEF9;} .m{fill:#93A1C0;} .d{fill:#56637F;}
+.flow{stroke-dasharray:6 8;animation:flow 1.2s linear infinite;}
+.flowslow{stroke-dasharray:3 9;animation:flow 2.4s linear infinite;}
+@keyframes flow{to{stroke-dashoffset:-28;}}
+@keyframes up{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+@keyframes fade{from{opacity:0;}to{opacity:1;}}
+@keyframes pulse{0%,100%{opacity:.25;}50%{opacity:1;}}
+@keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+</style>
+<linearGradient id="bgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A1022"/><stop offset="1" stop-color="#060A14"/></linearGradient>
+<radialGradient id="glowA" cx=".85" cy=".1" r=".7"><stop offset="0" stop-color="#A78BFA" stop-opacity=".16"/><stop offset="1" stop-color="#A78BFA" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowB" cx=".05" cy=".95" r=".6"><stop offset="0" stop-color="#22D3EE" stop-opacity=".12"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#1E2A4D"/></pattern>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="softglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+
+</defs>
+<rect x=".5" y=".5" width="579" height="199" rx="18" fill="url(#bgg)" stroke="#1E2A4D"/>
+<rect x=".5" y=".5" width="579" height="199" rx="18" fill="url(#glowA)"/>
+<rect x=".5" y=".5" width="579" height="199" rx="18" fill="url(#glowB)"/>
+
+
+<path d="M392 120 L395 115.5 L398 111 L401 106.7 L404 102.5 L407 98.5 L410 94.8 L413 91.5 L416 88.5 L419 85.9 L422 83.8 L425 82.1 L428 80.9 L431 80.1 L434 79.9 L437 80.2 L440 81 L443 82.3 L446 84.1 L449 86.3 L452 88.9 L455 91.8 L458 95.1 L461 98.7 L464 102.6 L467 106.6 L470 110.7 L473 115 L476 119.2 L479 123.4 L482 127.5 L485 131.4 L488 135.1 L491 138.5 L494 141.7 L497 144.4 L500 146.8 L503 148.8 L506 150.3 L509 151.3 L512 151.8 L515 151.8 L518 151.4 L521 150.4 L524 148.9 L527 147 L530 144.6 L533 141.8 L536 138.6 L539 135 L542 131.2 L545 127.1 L548 122.8 L551 118.4 L554 113.9 L557 109.4 L560 104.9" fill="none" stroke="#FBBF24" stroke-width="2"/><line stroke="#F472B6" stroke-width="1.8"><animate attributeName="x1" values="368;374;380;386;392;398;404;410;416;422;428;434;440;446;452;458;464;470;476;482;488;494;500;506;512;512;506;500;494;488;482;476;470;464;458;452;446;440;434;428;422;416;410;404;398;392;386;380;374;368" dur="8s" repeatCount="indefinite"/><animate attributeName="x2" values="436;442;448;454;460;466;472;478;484;490;496;502;508;514;520;526;532;538;544;550;556;562;568;574;580;580;574;568;562;556;550;544;538;532;526;520;514;508;502;496;490;484;478;472;466;460;454;448;442;436" dur="8s" repeatCount="indefinite"/><animate attributeName="y1" values="153;139.5;125.1;110.4;96.2;83.3;72.3;63.9;58.3;56;56.9;61.2;68.4;78.2;90.1;103.5;117.5;131.5;144.6;156.3;165.7;172.5;176.3;176.7;173.9;173.9;176.7;176.3;172.5;165.7;156.3;144.6;131.5;117.5;103.5;90.1;78.2;68.4;61.2;56.9;56;58.3;63.9;72.3;83.3;96.2;110.4;125.1;139.5;153" dur="8s" repeatCount="indefinite"/><animate attributeName="y2" values="57.5;55;55.8;59.9;67;76.7;88.5;101.8;115.8;129.8;143.1;154.8;164.4;171.3;175.2;175.8;173.1;167.2;158.4;147.2;134.1;119.9;105.2;90.8;77.5;77.5;90.8;105.2;119.9;134.1;147.2;158.4;167.2;173.1;175.8;175.2;171.3;164.4;154.8;143.1;129.8;115.8;101.8;88.5;76.7;67;59.9;55.8;55;57.5" dur="8s" repeatCount="indefinite"/></line><circle r="4.5" fill="#F472B6" filter="url(#glow)"><animate attributeName="cx" values="402;408;414;420;426;432;438;444;450;456;462;468;474;480;486;492;498;504;510;516;522;528;534;540;546;546;540;534;528;522;516;510;504;498;492;486;480;474;468;462;456;450;444;438;432;426;420;414;408;402" dur="8s" repeatCount="indefinite"/><animate attributeName="cy" values="105.2;97.3;90.4;85.1;81.6;80;80.4;82.8;87.1;92.9;100;108;116.4;124.7;132.6;139.6;145.3;149.3;151.5;151.7;149.9;146.2;140.7;133.8;125.7;125.7;133.8;140.7;146.2;149.9;151.7;151.5;149.3;145.3;139.6;132.6;124.7;116.4;108;100;92.9;87.1;82.8;80.4;80;81.6;85.1;90.4;97.3;105.2" dur="8s" repeatCount="indefinite"/></circle><text x="476" y="176" class="mono" font-size="11" fill="#F472B6" text-anchor="middle">f′(x) = slope of tangent</text><text x="28" y="44" class="mono" font-size="11" fill="#FBBF24" letter-spacing="1.5">EDU GAME</text><text x="28" y="76" font-size="22" font-weight="700" class="t">Calculus BC Quest</text><text x="28" y="104" font-size="13.5" class="m">Browser game for AP Calculus BC practice:</text><text x="28" y="124" font-size="13.5" class="m">pick a unit, a difficulty, and go.</text><rect x="28" y="156" width="37.8" height="22" rx="11" fill="#FBBF24" fill-opacity=".1" stroke="#FBBF24" stroke-opacity=".45"/><text x="46.9" y="171" class="mono" font-size="11" fill="#FBBF24" text-anchor="middle">HTML</text><rect x="73.8" y="156" width="66.6" height="22" rx="11" fill="#FBBF24" fill-opacity=".1" stroke="#FBBF24" stroke-opacity=".45"/><text x="107.1" y="171" class="mono" font-size="11" fill="#FBBF24" text-anchor="middle">Tailwind</text><rect x="148.39999999999998" y="156" width="95.4" height="22" rx="11" fill="#FBBF24" fill-opacity=".1" stroke="#FBBF24" stroke-opacity=".45"/><text x="196.1" y="171" class="mono" font-size="11" fill="#FBBF24" text-anchor="middle">GitHub Pages</text>
+</svg>
