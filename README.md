@@ -19,10 +19,16 @@ Wearable capture, on-device triggers, 3D body reconstruction, OpenSim inverse ki
   <img src="assets/system-light.svg" width="100%" alt="Figure 1. The Cerebel stack: glasses, phone, cloud.">
 </picture>
 
+<sub><b>Figure 1.</b> <i>The Cerebel stack, from a glance to a coaching cue.</i> Video (orange) is reconstructed into a musculoskeletal model in the cloud; audio (blue) is gated on the glasses by a 20k-parameter wake word.</sub>
+
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/biomech-dark.svg">
   <img src="assets/biomech-light.svg" width="100%" alt="Figure 2. A golf swing reconstructed as a skeleton, with thorax and pelvis rotation curves.">
 </picture>
+
+<sub><b>Figure 2.</b> <i>A golf swing, reconstructed.</i> Thorax and pelvis rotation from the kinematic chain. Their difference, the X-factor, peaks at the top of the backswing.</sub>
+
 
 **[Hey Cerebel](https://github.com/Gary-Lin08/cerebel-wake-word)** &nbsp;<sub>PyTorch · C · speech synthesis</sub><br>
 The wake word for our glasses: a 20k-parameter temporal ResNet that runs in firmware. It was trained only on synthetic speech, 11,843 clips from more than 1,000 TTS voices.
@@ -31,6 +37,9 @@ The wake word for our glasses: a 20k-parameter temporal ResNet that runs in firm
   <source media="(prefers-color-scheme: dark)" srcset="assets/wake-dark.svg">
   <img src="assets/wake-light.svg" width="100%" alt="Figure 3. Keyword spotting pipeline: waveform, log-mel, TC-ResNet, decision.">
 </picture>
+
+<sub><b>Figure 3.</b> <i>“Hey Cerebel”, keyword spotting on a glasses frame.</i> A temporal ResNet over 40 mel bands. The C port that ships in firmware matches PyTorch to six decimal places.</sub>
+
 
 **[agent-team-cli](https://github.com/Gary-Lin08/agent-team-cli)** &nbsp;<sub>TypeScript · Ink · MCP</sub><br>
 Runs a team of coding agents in parallel and streams each one into its own terminal pane. It works with Cursor, Claude Code and Codex.
