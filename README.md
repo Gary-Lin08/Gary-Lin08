@@ -3,7 +3,7 @@
   <img src="assets/header-light.r5.svg" width="100%" alt="Kaijun Lin. Building Cerebel AI, wearable perception that understands how people move.">
 </picture>
 
-I work on [Cerebel AI](https://cerebel.tech): AR glasses that see and hear what you do, and a cloud pipeline that turns phone video into joint angles and coaching feedback. Based in Japan.
+I work on [Cerebel AI](https://cerebel.tech): AR glasses that see and hear what you do, and a cloud pipeline that turns phone video into joint angles and coaching feedback. Based in Boston.
 
 ### Cerebel glasses
 
