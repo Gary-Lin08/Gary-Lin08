@@ -31,18 +31,27 @@ Monocular AR glasses with a green microLED waveguide display, a camera and a mic
   <img src="assets/golf-light.r5.svg" width="100%" alt="Figure 4. A golf swing in 3D with pelvis and thorax rotation.">
 </picture>
 
+### [cervical-retarget](https://github.com/Gary-Lin08/cervical-retarget) &nbsp;<sub>open source · Python · OpenSim</sub>
+
+An articulated neck and head for markerless OpenSim inverse kinematics. Two cervical joints are added to the Rajagopal model and driven by landmarks derived from GEM-X joints; on two recorded sessions, head-orientation error drops by 34–36%.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/crhero-dark.r5.svg">
+  <img src="assets/crhero-light.r5.svg" width="100%" alt="Figure 5. Baseline with the skull welded to the torso vs the articulated neck on one recorded session, with per-frame head orientation error.">
+</picture>
+
 ### [Hey Cerebel](https://github.com/Gary-Lin08/cerebel-wake-word)
 
 The wake word that runs on the glasses: a TC-ResNet with about 20k parameters, written in C for the firmware and trained only on synthetic speech (11,843 clips).
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/wake-dark.r5.svg">
-  <img src="assets/wake-light.r5.svg" width="100%" alt="Figure 5. Keyword spotting pipeline: waveform, log-mel, TC-ResNet, decision.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/wake-dark.r6.svg">
+  <img src="assets/wake-light.r6.svg" width="100%" alt="Figure 6. Keyword spotting pipeline: waveform, log-mel, TC-ResNet, decision.">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/results-dark.r5.svg">
-  <img src="assets/results-light.r5.svg" width="100%" alt="Figure 6. Detection rate and false accepts per hour, v1 and v2.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/results-dark.r6.svg">
+  <img src="assets/results-light.r6.svg" width="100%" alt="Figure 7. Detection rate and false accepts per hour, v1 and v2.">
 </picture>
 
 ### [Tennis AI](https://github.com/Gary-Lin08/Tennis-AI)
@@ -50,13 +59,13 @@ The wake word that runs on the glasses: a TC-ResNet with about 20k parameters, w
 A monocular perception stack for tennis. A TrackNet heatmap network finds the ball in every frame, a court homography puts each detection in metres, a physics-based detector finds bounces and calls them in or out, MoveNet pose feeds a recurrent stroke classifier, and a state machine turns the events into rallies and a score. The networks run on device as Core ML models.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/tennis-dark.r5.svg">
-  <img src="assets/tennis-light.r5.svg" width="100%" alt="Figure 7. Ball tracking on a calibrated court, with a bounce map.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/tennis-dark.r6.svg">
+  <img src="assets/tennis-light.r6.svg" width="100%" alt="Figure 8. Ball tracking on a calibrated court, with a bounce map.">
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/tmodel-dark.r5.svg">
-  <img src="assets/tmodel-light.r5.svg" width="100%" alt="Figure 8. The Tennis AI model stack: GridTrackNet, court homography, bounce detection, MoveNet, GRU stroke classifier, rally and score state machine.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/tmodel-dark.r6.svg">
+  <img src="assets/tmodel-light.r6.svg" width="100%" alt="Figure 9. The Tennis AI model stack: GridTrackNet, court homography, bounce detection, MoveNet, GRU stroke classifier, rally and score state machine.">
 </picture>
 
 ### Other
