@@ -1,102 +1,66 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.r3.svg">
-  <img src="assets/header-light.r3.svg" width="100%" alt="Kaijun Lin. On-device perception, human motion, agent systems.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.r5.svg">
+  <img src="assets/header-light.r5.svg" width="100%" alt="Kaijun Lin. Building Cerebel AI, wearable perception that understands how people move.">
 </picture>
 
-I build perception for wearables. On one end are small models that run on a pair of AR glasses; on the other is a cloud pipeline that turns ordinary video into a musculoskeletal model of how someone moves. In between, a language model explains what happened, but every number it quotes comes from a deterministic tool.
+I work on [Cerebel AI](https://cerebel.tech): AR glasses that see and hear what you do, and a cloud pipeline that turns phone video into joint angles and coaching feedback. Based in Japan.
 
-<p>
-  <a href="https://cerebel.tech"><b>Cerebel AI</b></a> &nbsp;·&nbsp; Wearable Motion Intelligence &nbsp;·&nbsp; <a href="https://cerebel.tech">cerebel.tech</a> &nbsp;·&nbsp; Japan
-</p>
+### Cerebel glasses
 
-<table>
-  <tr>
-    <td width="33%" valign="top"><b>Edge perception</b><br><sub>Wake words, capture and display on a 128 MB ARM board. Every model has to earn its milliwatts.</sub></td>
-    <td width="33%" valign="top"><b>Human motion</b><br><sub>Monocular video to body mesh to musculoskeletal inverse kinematics, with joint angles you can defend.</sub></td>
-    <td width="33%" valign="top"><b>Agent systems</b><br><sub>Language models that orchestrate tools and other agents, and never invent a number.</sub></td>
-  </tr>
-</table>
-
-<br>
-
-### Cerebel glasses &nbsp;<sub>closed source</sub>
-
-A monocular waveguide display, a camera and a microphone on a lightweight Linux frame. The glasses run captions, translation, a voice assistant and photo capture, and they show coaching cues mid-session.
+Monocular AR glasses with a green microLED waveguide display, a camera and a microphone. A small Linux board in the frame handles capture and display; captions, translation and the voice assistant run together with a phone and a cloud service.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/glasses-dark.r3.svg">
-  <img src="assets/glasses-light.r3.svg" width="100%" alt="Figure 1. Line drawing of the Cerebel glasses with component callouts, and the 640 by 480 green display.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/glasses-dark.r5.svg">
+  <img src="assets/glasses-light.r5.svg" width="100%" alt="Figure 1. The Cerebel glasses rendered from the production CAD.">
 </picture>
 
-<sub><b>Figure 1.</b> <i>The glasses, as a line drawing.</i> Callouts mark where each part sits. On the right, the display at its native resolution: the wearer asks about a swing and gets a number back.</sub>
-
-<br>
-
-### Cerebel motion stack &nbsp;<sub>closed source</sub>
+### Motion analysis
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/system-dark.r3.svg">
-  <img src="assets/system-light.r3.svg" width="100%" alt="Figure 2. The Cerebel stack: glasses, phone, cloud.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/system-dark.r5.svg">
+  <img src="assets/system-light.r5.svg" width="100%" alt="Figure 2. System overview: glasses, phone, cloud.">
 </picture>
-
-<sub><b>Figure 2.</b> <i>From a glance to a coaching cue.</i> Video (orange) is reconstructed into a musculoskeletal model in the cloud; audio (blue) is gated on the glasses by a 20k-parameter wake word.</sub>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/recon-dark.r3.svg">
-  <img src="assets/recon-light.r3.svg" width="100%" alt="Figure 3. Input frame with 2D keypoints, a rotating body mesh, and a rotating musculoskeletal model.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/recon-dark.r5.svg">
+  <img src="assets/recon-light.r5.svg" width="100%" alt="Figure 3. One recorded session: 77 body joints from GEM-X and joint angles from OpenSim.">
 </picture>
-
-<sub><b>Figure 3.</b> <i>Video to mesh to muscles.</i> The body mesh is estimated with GEM-X and joint kinematics are solved with <a href="https://opensim.stanford.edu/">OpenSim</a> inverse kinematics. The renderings here are my own schematic drawings, not output from either tool.</sub>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/golf-dark.r3.svg">
-  <img src="assets/golf-light.r3.svg" width="100%" alt="Figure 4. A golf swing reconstructed in 3D with swing plane, and thorax and pelvis rotation curves.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/golf-dark.r5.svg">
+  <img src="assets/golf-light.r5.svg" width="100%" alt="Figure 4. A golf swing in 3D with pelvis and thorax rotation.">
 </picture>
 
-<sub><b>Figure 4.</b> <i>A golf swing in 3D.</i> The pelvis and thorax frames rotate on the swing plane. The shaded gap between their rotation curves is the X-factor, which peaks at the top of the backswing. Illustrative data.</sub>
+### [Hey Cerebel](https://github.com/Gary-Lin08/cerebel-wake-word)
 
-<br>
-
-### [Hey Cerebel](https://github.com/Gary-Lin08/cerebel-wake-word) &nbsp;<sub>PyTorch · C · speech synthesis</sub>
-
-The glasses' wake word: a 20k-parameter temporal ResNet that runs in firmware. It was trained only on synthetic speech, 11,843 clips from more than 1,000 TTS voices.
+The wake word that runs on the glasses: a TC-ResNet with about 20k parameters, written in C for the firmware and trained only on synthetic speech (11,843 clips).
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/wake-dark.r3.svg">
-  <img src="assets/wake-light.r3.svg" width="100%" alt="Figure 5. Keyword spotting pipeline: waveform, log-mel, TC-ResNet, decision.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/wake-dark.r5.svg">
+  <img src="assets/wake-light.r5.svg" width="100%" alt="Figure 5. Keyword spotting pipeline: waveform, log-mel, TC-ResNet, decision.">
 </picture>
-
-<sub><b>Figure 5.</b> <i>Keyword spotting on a glasses frame.</i> A temporal ResNet over 40 mel bands. The C port that ships in firmware matches PyTorch to six decimal places.</sub>
-
-<br>
-
-### [Tennis AI](https://github.com/Gary-Lin08/Tennis-AI) &nbsp;<sub>SwiftUI · Core ML · Python</sub>
-
-On-device ball tracking, pose and shot recognition for tennis practice video, plus an offline pipeline that splits rallies and keeps score.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/tennis-dark.r3.svg">
-  <img src="assets/tennis-light.r3.svg" width="100%" alt="Figure 6. A ball track on a calibrated court, and a top-down bounce map.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/results-dark.r5.svg">
+  <img src="assets/results-light.r5.svg" width="100%" alt="Figure 6. Detection rate and false accepts per hour, v1 and v2.">
 </picture>
 
-<sub><b>Figure 6.</b> <i>Ball tracking on a calibrated court.</i> Four keypoints fix the court homography, and each bounce is projected onto the ground plane. Illustrative rally.</sub>
+### [Tennis AI](https://github.com/Gary-Lin08/Tennis-AI)
 
-<br>
+A monocular perception stack for tennis. A TrackNet heatmap network finds the ball in every frame, a court homography puts each detection in metres, a physics-based detector finds bounces and calls them in or out, MoveNet pose feeds a recurrent stroke classifier, and a state machine turns the events into rallies and a score. The networks run on device as Core ML models.
 
-### Also
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/tennis-dark.r5.svg">
+  <img src="assets/tennis-light.r5.svg" width="100%" alt="Figure 7. Ball tracking on a calibrated court, with a bounce map.">
+</picture>
 
-**[agent-team-cli](https://github.com/Gary-Lin08/agent-team-cli)** &nbsp;<sub>TypeScript · Ink · MCP</sub><br>
-Runs a team of coding agents in parallel and streams each one into its own terminal pane. It works with Cursor, Claude Code and Codex.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/tmodel-dark.r5.svg">
+  <img src="assets/tmodel-light.r5.svg" width="100%" alt="Figure 8. The Tennis AI model stack: GridTrackNet, court homography, bounce detection, MoveNet, GRU stroke classifier, rally and score state machine.">
+</picture>
 
-**[Calculus BC Quest](https://gary-lin08.github.io/Calculus-BC-Quest/)** &nbsp;<sub>HTML</sub><br>
-A browser practice game covering all ten AP Calculus BC units and past papers from 2017 to 2022.
+### Other
 
-<br>
+- [agent-team-cli](https://github.com/Gary-Lin08/agent-team-cli): run several coding agents in parallel in split terminal panes (TypeScript).
 
-### Tools
-
-Python, PyTorch, C &nbsp;·&nbsp; Swift, Core ML &nbsp;·&nbsp; TypeScript, React, Node &nbsp;·&nbsp; OpenSim &nbsp;·&nbsp; FastAPI, Supabase
-
-<br>
-
-<sub>Reach me through <a href="https://cerebel.tech">cerebel.tech</a>. Every figure on this page is hand-built SVG, generated by the scripts in <a href="tools/">tools/</a>.</sub>
+Python · PyTorch · C · Swift / Core ML · TypeScript · OpenSim

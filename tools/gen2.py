@@ -23,7 +23,9 @@ T = THEMES['light']
 
 
 def f(x):
-    return f"{x:.1f}".rstrip('0').rstrip('.')
+    s = f"{x:.4f}" if abs(x) < 1 else f"{x:.1f}"
+    s = s.rstrip('0').rstrip('.')
+    return s if s not in ('', '-0') else '0'
 
 
 def svg(w, h, body, defs=''):
@@ -41,7 +43,44 @@ text.ink2{{fill:{T['ink2']};}} text.mute{{fill:{T['mute']};}} text.acc{{fill:{T[
 </svg>'''
 
 
+CAPTIONS = {
+    'glasses': (1, 'The Cerebel glasses, rendered from the production CAD.', 'The grating layout on the lens is schematic.'),
+    'system': (2, 'System overview.', 'Video and kinematics in orange, audio in blue, retrieval in green.'),
+    'recon': (3, 'One recorded session, three views.', 'A: 77 body joints estimated by GEM-X from a phone video. B: the same motion solved by OpenSim inverse kinematics on the Rajagopal musculoskeletal model (Rajagopal et al. 2016; Lai et al. 2017; Uhlrich et al. 2022), drawn with its bone geometry and 80 muscle paths. C: four of the resulting joint angles.'),
+    'golf': (4, 'A golf swing in 3D.', 'Pelvis and thorax rotation about the vertical axis; the shaded gap between them is the X-factor. Illustrative data.'),
+    'wake': (5, 'Hey Cerebel keyword spotting.', 'Waveform, 40-band log-mel features, a TC-ResNet, and the two-frame decision rule.'),
+    'results': (6, 'Wake-word accuracy on held-out speakers.', 'v2 is trained only on commercially licensed voices.'),
+    'tennis': (7, 'Ball tracking on a calibrated court.', 'Four keypoints fix the court homography, and each bounce is projected onto the ground plane. Illustrative rally and bounce map.'),
+    'tmodel': (8, 'The Tennis AI model stack.', '(a) GridTrackNet takes five frames and predicts a coarse confidence grid with sub-cell offsets. (b) A homography from four court keypoints maps detections to metres. (c) Bounces are sign flips of vertical velocity. (d) MoveNet gives 17 keypoints per frame. (e) A GRU classifies 30-frame pose windows into four classes (probabilities shown are illustrative). (f) A state machine turns events into rallies and a score.'),
+}
+
+
+def _wrap(text, n):
+    out, cur = [], ''
+    for w in text.split():
+        if len(cur) + len(w) + 1 > n:
+            out.append(cur); cur = w
+        else:
+            cur = (cur + ' ' + w).strip()
+    if cur: out.append(cur)
+    return out
+
+
 def save(name, content):
+    key = name.rsplit('-', 1)[0]
+    if key in CAPTIONS:
+        import re as _re
+        num, title, rest = CAPTIONS[key]
+        m = _re.search(r'width="(\d+)" height="(\d+)" viewBox="0 0 (\d+) (\d+)"', content)
+        w, h = int(m.group(1)), int(m.group(2))
+        lines = _wrap(rest, 118) if rest else []
+        y = h + 30
+        cap = f'<text x="0" y="{y}" class="serif" font-size="18"><tspan font-weight="700">Figure {num}.</tspan> <tspan font-style="italic">{title}</tspan></text>'
+        for i, ln in enumerate(lines):
+            cap += f'<text x="0" y="{y + 26 * (i + 1)}" class="serif ink2" font-size="17">{ln}</text>'
+        nh = y + 26 * len(lines) + 14
+        content = content.replace(m.group(0), f'width="{w}" height="{nh}" viewBox="0 0 {w} {nh}"', 1)
+        content = content.replace('</svg>', cap + '\n</svg>')
     with open(os.path.join(OUT, name), 'w', encoding='utf-8') as fh:
         fh.write(content)
 
@@ -123,7 +162,6 @@ def header():
     b = ''
     # typography block
     b += f'<text x="0" y="104" class="serif" font-size="74" letter-spacing="-.5">Kaijun Lin</text>'
-    b += f'<text x="3" y="142" class="caps">ON-DEVICE PERCEPTION  ·  HUMAN MOTION  ·  AGENT SYSTEMS</text>'
     b += f'<line x1="2" y1="164" x2="520" y2="164" stroke="{T["hair"]}"/>'
     b += f'<text x="2" y="198" class="serif ink2" font-size="21">Building <tspan font-style="italic" fill="{T["ink"]}">Cerebel AI</tspan>, wearable perception</text>'
     b += f'<text x="2" y="226" class="serif ink2" font-size="21">that understands how people move.</text>'
@@ -486,7 +524,11 @@ def agents():
 
 exec(open(__file__.replace('gen2.py', 'figs3d.py'), encoding='utf-8').read())
 exec(open(__file__.replace('gen2.py', 'figs_body.py'), encoding='utf-8').read())
+exec(open(__file__.replace('gen2.py', 'figs_real.py'), encoding='utf-8').read())
+exec(open(__file__.replace('gen2.py', 'figs_system.py'), encoding='utf-8').read())
+exec(open(__file__.replace('gen2.py', 'figs_recon2.py'), encoding='utf-8').read())
+exec(open(__file__.replace('gen2.py', 'figs_tmodel.py'), encoding='utf-8').read())
 for TN in ('light', 'dark'):
     T = THEMES[TN]
-    header(); system(); biomech(); wake(); results(); agents(); golf3d(); tennis(); reconstruct(); glasses()
+    header(); system(); biomech(); wake(); results(); agents(); golf3d(); tennis(); reconstruct(); glasses(); tmodel()
 print('ok', sorted(os.listdir(OUT)))
